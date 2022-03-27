@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Loan Calculator</title>
+    <style>
+      .input-group-addon{
+        margin: auto;
+        background-color: #444;
+        color: #fff;
+        padding:0.5rem 0.8rem;
+        border-radius: 10%;
+      }
+      .label-style{
+        margin: auto;
+        border: rgba(114, 114, 114, 0.808) solid 1px;
+        padding: 0.4rem 0.1rem;
+        background-color: #444;
+        color: #fff;
+      }
+      .bottom-line{
+          background-color: #444;
+          width: 2rem;
+          height: 2px;
+          margin: auto;
+          
+      }
+      .fit-in{
+        width: 10%;
+        height: 10%;
+      }
+
+      .blink{
+        display: block;
+        animation : blink-me 0.8s ease infinite;
+      }
+
+      @keyframes blink-me {
+        from{
+          display: none;
+          color:white;
+        }
+        to{
+          display: block;
+          color:black;
+        }
+      }
+
+      #loader, #results{
+        display: none;
+      }
+      
+    </style>
+  </head>
+  <body class="bg-dark">
+    <div class="bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card card-body text-center mt-5">
+              <h1 class="heading display-5 pb-2">Loan Calculator</h1>
+              <form id="loan-form">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input type="number" class = "form-control" id="amount" placeholder="Loan Amount">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon">%</span>
+                    <input type="number" class = "form-control" id="interest" placeholder="Interest">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="years" placeholder="Years to repay">
+                </div>
+                <div class="form-group">
+                  <input type="submit" name="calculate" value="calculate" class="btn btn-dark btn-block">
+                </div>
+              </form>
+              <!-- Loader -->
+              <div id="loader">
+                <img src="./img/loaderLoanCal.gif" class="fit-in"alt="loading">
+                <div class="blink">calculating....</div>
+              </div>
+              <!-- Results -->
+              <div id="results">
+                    <h5 class="heading">Results</h5>
+                    <div class="bottom-line"></div>
+                    <div class="form-group pt-4">
+                      <div class="input-group">
+                        <label class="label-style ">Monthly Payment</label>
+                        <input type="number" class = "form-control" id="monthly-payment" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <div class="input-group">
+                        <label class="label-style ">Total Payment</label>
+                        <input type="number" class = "form-control" id="total-payment" 
+                        disabled>
+                      </div>
+                    </div>
+                    <div class="form-group ">
+                      <div class="input-group">
+                        <label class="label-style ">Total Interest</label>
+                        <input type="number" class = "form-control" id="total-interest" 
+                        disabled>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
